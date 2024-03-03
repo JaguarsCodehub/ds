@@ -1,35 +1,5 @@
-# -*- coding: utf-8 -*-
-"""
-Spyder Editor
-
-InputFileName='D:/Nishant/Masters/pracexam/Country_Code.csv'
-
-This is a temporary script file.
-"""
-
-
 import pandas as pd
 import xml.etree.ElementTree as ET
-
-#=============================================================
-def df2xml(data):
-    header = data.columns
-    root = ET.Element('root')
-    
-    for row in range(data.shape[0]):
-        entry = ET.SubElement(root, 'entry')
-        
-        for index in range(data.shape[1]):
-            schild = str(header[index])
-            child = ET.SubElement(entry, schild)
-            
-            if str(data[schild][row]) != 'nan':
-                child.text = str(data[schild][row])
-            else:
-                child.text = 'n/a'
-                
-    result = ET.tostring(root)
-    return result
 
 #=============================================================
 def xml2df(xml_data):
@@ -46,10 +16,8 @@ def xml2df(xml_data):
         
     return pd.DataFrame(all_records)
 
-#=============================================================
 # Input Agreement ============================================
-#=============================================================
-sInputFileName='D:/Nishant/Masters/pracexam/Country_Code.xml'
+sInputFileName='C:/Users/Jyotindra/Desktop/DSPracs/Country_Code.xml'
 InputData = open(sInputFileName).read()
 print('Input Data Values ===================================')
 print(InputData)
@@ -81,6 +49,6 @@ print(ProcessData)
 # Output Agreement ===========================================
 #=============================================================
 OutputData = ProcessData
-sOutputFileName = 'D:/Nishant/Masters/pracexam/HORUS-XML-Country.csv'
+sOutputFileName = 'C:/Users/Jyotindra/Desktop/DSPracs/HORUS-XML-Country.csv'
 OutputData.to_csv(sOutputFileName, index=False)
 print('XML to HORUS - Done')

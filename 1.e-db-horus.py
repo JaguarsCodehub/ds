@@ -1,13 +1,3 @@
-# InputFileName='D:/Nishant/Masters/pracexam/Country_Code.csv'
-"""
-Spyder Editor
-
-InputFileName='D:/Nishant/Masters/pracexam/Country_Code.csv'
-
-This is a temporary script file.
-"""
-
-
 import pandas as pd
 import sqlite3 as sq
 sInputFileName='D:/Nishant/Masters/pracexam/utility.db'
